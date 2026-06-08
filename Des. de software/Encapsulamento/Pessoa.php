@@ -1,25 +1,23 @@
 <?php
 
-    class Pessoa {
+class Pessoa {
+    private $nome;
 
-     private $nome;
-     private $idade;
-
-     public function __construct($n, $i){
-        $this->nome= $n;
-        $this->idade= $i;
-     }
-     public function getNome(){
-        return $this->nome;
-     }
-     public function setNome($n){
-        $this->nome= $n;
-     }
+    public function setNome(string $n): void {
+        $this->nome = $n;
     }
 
-    $obj= new Pessoa("Vini", 14);
-    echo $obj->getNome();
-    $obj->setNome("Claudio",);
-    echo "<br>";
-    echo $obj->getNome();
-?>  
+    private function getNome(): string {
+        return $this->nome;
+    }
+
+    public function mostrarInformacoes(): string {
+        return $this->getNome();
+    }
+}
+
+$pessoa = new Pessoa();
+
+$pessoa->setNome("Vini");
+
+echo $pessoa->mostrarInformacoes();
